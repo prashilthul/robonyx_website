@@ -1,0 +1,136 @@
+<!-- Creative SVG background shapes -->
+<style>
+    body::before {
+        content: "";
+        position: fixed;
+        top: -100px;
+        left: -100px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle at 60% 40%, #4f8cff 0%, #222 100%);
+        opacity: 0.15;
+        z-index: -1;
+        border-radius: 50%;
+    }
+    body::after {
+        content: "";
+        position: fixed;
+        bottom: -120px;
+        right: -120px;
+        width: 350px;
+        height: 350px;
+        background: radial-gradient(circle at 40% 60%, #ffb347 0%, #222 100%);
+        opacity: 0.13;
+        z-index: -1;
+        border-radius: 50%;
+    }
+</style>
+<!-- Animated robot mascot -->
+<div style="position:fixed;top:30px;right:30px;z-index:10;">
+    <svg width="80" height="80" viewBox="0 0 80 80">
+        <circle cx="40" cy="40" r="30" fill="#4f8cff" stroke="#222" stroke-width="3"/>
+        <rect x="28" y="55" width="24" height="10" rx="5" fill="#222"/>
+        <circle cx="32" cy="38" r="5" fill="#fff"/>
+        <circle cx="48" cy="38" r="5" fill="#fff"/>
+        <ellipse cx="40" cy="48" rx="8" ry="4" fill="#fff"/>
+        <rect x="36" y="18" width="8" height="10" rx="4" fill="#ffb347"/>
+        <rect x="18" y="32" width="8" height="18" rx="4" fill="#ffb347"/>
+        <rect x="54" y="32" width="8" height="18" rx="4" fill="#ffb347"/>
+    </svg>
+</div>
+<!-- Floating action button for quick contact -->
+<a href="mailto:info@robonyxclub.com" style="
+    position:fixed;
+    bottom:80px;
+    right:30px;
+    background:#4f8cff;
+    color:#fff;
+    border-radius:50%;
+    width:56px;
+    height:56px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 12px rgba(79,140,255,0.3);
+    font-size:28px;
+    text-decoration:none;
+    transition:background 0.2s;
+    z-index:10;
+" title="Contact Robonyx">
+    &#9993;
+</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Robonyx Club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #222;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+        }
+        .about {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: #222;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Robonyx Club</h1>
+        <p>Innovate. Create. Collaborate.</p>
+    </header>
+    <main>
+        <section class="about">
+            <h2>About Us</h2>
+            <p>
+                Robonyx is a club for robotics enthusiasts, makers, and innovators. 
+                We organize workshops, competitions, and collaborative projects to foster learning and creativity in robotics and technology.
+            </p>
+        </section>
+        <section class="events">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>Weekly Robotics Workshop - Every Saturday</li>
+                <li>Annual Robonyx Hackathon - Coming Soon</li>
+                <li>Guest Speaker Series - Monthly</li>
+            </ul>
+        </section>
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:info@robonyxclub.com">info@robonyxclub.com</a></p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Robonyx Club
+    </footer>
+</body>
+</html>
