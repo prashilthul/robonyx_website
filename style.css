@@ -44,7 +44,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5rem;
-    z-index: 999;
+    
 }
 
 header h1{
@@ -66,6 +66,7 @@ nav a{
     transition: color 0.2s ease;
     text-decoration: none;
     color: inherit;
+    z-index: 999;
 }
 
 nav a:hover{
@@ -82,6 +83,7 @@ nav a:hover{
     font-weight: 500;
     transition: background-color 0.2s ease;
     cursor: pointer;
+    z-index: 999;
 }
 
 .home_page:hover{
@@ -185,4 +187,85 @@ main{
 
 .meet_the_team2:hover{
     background-color: gray;
+}
+
+.robot_3d {
+    position: absolute;
+    top: 0;
+    right: -20%;
+}
+
+/* for tablets */
+
+@media (max-width: 1300px){
+    header{
+        padding: 1rem 0.5rem;
+    }
+
+    .content{
+        margin-top: 85%;
+    }
+
+    .robot_3d{
+        scale: 0.8;
+        top: -20%;
+        right: 2%;
+    }
+}
+
+/* mobile responsive */
+
+@media (max-width: 786px){
+    header{
+        padding: 1rem 0.1rem;
+    }
+
+    nav{
+        display: none;
+    }
+
+    header h1{
+        font-size: 2rem;
+    }
+
+    .home_page{
+        padding: 0.6rem 1.5rem;
+    }
+
+    .content{
+        margin-top: 25rem;
+    }
+
+    .robot_3d{
+        scale: 0.5;
+        top: -25%;
+        right: 0;
+    }
+
+    .content{
+        max-width: 30rem;
+        margin-left: 10%;
+    }
+
+    .tag_box{
+        width: 12rem;
+    }
+
+    .content h1{
+        font-size: 2.5rem;
+    }
+
+    .description{
+        font-size: 1rem;
+    }
+
+    .meet_the_team2{
+        font-size: 0.8rem;
+        padding: 0.8rem 1.2rem;
+    }
+
+    .meet_the_team2{
+        font-size: 0.8rem;
+        padding: 0.8rem 2rem;
+    }
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robonyx @ IIIT NR</title>
     <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <img class="image_gradient" src="icons/gradient.png" alt="gradient">
@@ -12,33 +13,50 @@
 
     <div class="container">
         <header>
-            <h1 class="logo">Robonyx (comET)</h1>
+            <h1 data-aos="fade-down" data-aos-duration="1500" class="logo">Robonyx (comET)</h1>
 
             <nav>
-                <a href="#">anchor1</a>
-                <a href="#">anchor1</a>
-                <a href="#">anchor1</a>
-                <a href="#">anchor1</a>
+                <a data-aos="fade-down" data-aos-duration="1500" href="#">anchor1</a>
+                <a data-aos="fade-down" data-aos-duration="2000" href="#">anchor1</a>
+                <a data-aos="fade-down" data-aos-duration="2500" href="#">anchor1</a>
+                <a data-aos="fade-down" data-aos-duration="3000" href="#">anchor1</a>
             </nav>
 
-            <button class="home_page">HOME</button>
+            <button data-aos="fade-down" data-aos-duration="1500" class="home_page">HOME</button>
 
         </header>
 
 
         <main>
             <div class="content">
-                <div class="tag_box">
+                <div data-aos="fade-zoom-in"
+                     data-aos-easing="ease-in-back"
+                     data-aos-delay="300"
+                     data-aos-offset="0"
+                     data-aos-duration="1500"
+                     class="tag_box">
                     <div class="tag">Introducing Robonyx</div>
                 </div>
 
-                <h1>Email for <br>developers</h1>
+                <h1  data-aos="fade-zoom-in"
+                     data-aos-easing="ease-in-back"
+                     data-aos-delay="300"
+                     data-aos-offset="0"
+                     data-aos-duration="2000">Email for <br>developers</h1>
 
-                <p class="description">
+                <p data-aos="fade-zoom-in"
+                     data-aos-easing="ease-in-back"
+                     data-aos-delay="300"
+                     data-aos-offset="0"
+                     data-aos-duration="2500" class="description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Non architecto voluptatum aperiam porro maiores aliquid iste minus laborum, nemo eius exercitationem libero cum sequi tempore magni perspiciatis blanditiis, esse beatae!
                 </p>
 
-                <div class="buttons">
+                <div data-aos="fade-zoom-in"
+                     data-aos-easing="ease-in-back"
+                     data-aos-delay="300"
+                     data-aos-offset="0"
+                     data-aos-duration="3000" class="buttons">
                     <a href="#" class="meet_the_team">Meet The Team</a>
                     <a href="#" class="meet_the_team2">Meet The Team</a>
                 </div>
@@ -46,7 +64,21 @@
             </div>
         </main>
 
+        <spline-viewer data-aos="fade-zoom-in"
+                     data-aos-easing="ease-in-back"
+                     data-aos-delay="300"
+                     data-aos-offset="0"
+                     data-aos-duration="3000" class="robot_3d" url="https://prod.spline.design/ntgdbZ7IiQBn-lq3/scene.splinecode"></spline-viewer>
+
     </div>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.48/build/spline-viewer.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    
 
 </body>
 </html>
