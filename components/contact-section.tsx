@@ -42,7 +42,7 @@ export function ContactSection() {
 					</h2>
 					<p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
 						Ready to join our robotics community? Have questions about our
-						projects? We'd love to hear from you!
+						projects? We&apos;d love to hear from you!
 					</p>
 				</div>
 

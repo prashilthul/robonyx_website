@@ -25,7 +25,7 @@ interface Connection {
 
 export default function GraphPage() {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
-	const animationRef = useRef<number>();
+	const animationRef = useRef<number | null>(null);
 	const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 	const [selectedNode, setSelectedNode] = useState<string | null>(null);
 	const [nodes, setNodes] = useState<Node[]>([]);

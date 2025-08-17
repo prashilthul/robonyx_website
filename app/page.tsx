@@ -7,7 +7,6 @@ import { HeroSection } from "@/components/hero-section";
 import { PhotoCarousel } from "@/components/photo-carousel";
 import { AboutSection } from "@/components/about-section";
 import { TeamSection } from "@/components/team-section";
-import { Footer } from "@/components/footer";
 
 export default function Home() {
 	const [isLoading, setIsLoading] = useState(true);

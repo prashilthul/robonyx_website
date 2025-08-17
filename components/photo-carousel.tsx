@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const carouselImages = [
 	{
@@ -98,9 +99,11 @@ export function PhotoCarousel() {
 									key={index}
 									className="w-full flex-shrink-0 relative group"
 								>
-									<img
+									<Image
 										src={image.src || "/placeholder.svg"}
 										alt={image.alt}
+										width={800}
+										height={600}
 										className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105"
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex items-end transition-opacity duration-300 group-hover:from-primary/90">
