@@ -1,0 +1,969 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated design tokens for robotics club theme */
+  --background: oklch(1 0 0); /* White background */
+  --foreground: oklch(0 0 0); /* Black text */
+  --card: oklch(0.98 0 0); /* Light gray for cards */
+  --card-foreground: oklch(0.3 0 0); /* Dark gray text for cards */
+  --popover: oklch(1 0 0); /* White popover background */
+  --popover-foreground: oklch(0 0 0); /* Black popover text */
+  --primary: oklch(0 0 0); /* Black primary */
+  --primary-foreground: oklch(1 0 0); /* White text on primary */
+  --secondary: oklch(0.3 0 0); /* Dark gray secondary */
+  --secondary-foreground: oklch(1 0 0); /* White text on secondary */
+  --muted: oklch(0.98 0 0); /* Light gray muted */
+  --muted-foreground: oklch(0.3 0 0); /* Dark gray muted text */
+  --accent: oklch(0.65 0.15 162); /* Emerald green accent */
+  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  --destructive: oklch(0.55 0.22 25); /* Red for errors */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+  --border: oklch(0.9 0 0); /* Light border */
+  --input: oklch(0.98 0 0); /* Light input background */
+  --ring: oklch(0.65 0.15 162 / 0.5); /* Emerald ring with opacity */
+  --chart-1: oklch(0.55 0.15 200); /* Blue chart color */
+  --chart-2: oklch(0.6 0.15 162); /* Green chart color */
+  --chart-3: oklch(0.55 0.22 25); /* Red chart color */
+  --chart-4: oklch(0.7 0.15 85); /* Yellow chart color */
+  --chart-5: oklch(0.65 0.15 162); /* Emerald chart color */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.3 0 0);
+  --sidebar-primary: oklch(0 0 0);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.65 0.15 162);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.65 0.15 162 / 0.5);
+}
+
+.dark {
+  /* Dark mode tokens for robotics theme */
+  --background: oklch(0.05 0 0); /* Very dark background */
+  --foreground: oklch(0.98 0 0); /* Light text */
+  --card: oklch(0.1 0 0); /* Dark card background */
+  --card-foreground: oklch(0.98 0 0); /* Light card text */
+  --popover: oklch(0.05 0 0); /* Dark popover */
+  --popover-foreground: oklch(0.98 0 0); /* Light popover text */
+  --primary: oklch(0.98 0 0); /* Light primary in dark mode */
+  --primary-foreground: oklch(0.05 0 0); /* Dark text on primary */
+  --secondary: oklch(0.15 0 0); /* Dark secondary */
+  --secondary-foreground: oklch(0.98 0 0); /* Light text on secondary */
+  --muted: oklch(0.15 0 0); /* Dark muted */
+  --muted-foreground: oklch(0.7 0 0); /* Gray muted text */
+  --accent: oklch(0.65 0.15 162); /* Same emerald accent */
+  --accent-foreground: oklch(1 0 0); /* White text on accent */
+  --destructive: oklch(0.55 0.22 25); /* Same red */
+  --destructive-foreground: oklch(1 0 0); /* White text on destructive */
+  --border: oklch(0.15 0 0); /* Dark border */
+  --input: oklch(0.15 0 0); /* Dark input */
+  --ring: oklch(0.65 0.15 162 / 0.5); /* Same emerald ring */
+  --chart-1: oklch(0.6 0.2 264);
+  --chart-2: oklch(0.7 0.17 162);
+  --chart-3: oklch(0.77 0.19 70);
+  --chart-4: oklch(0.63 0.27 304);
+  --chart-5: oklch(0.65 0.25 16);
+  --sidebar: oklch(0.1 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.6 0.2 264);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.15 0 0);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.15 0 0);
+  --sidebar-ring: oklch(0.4 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Added smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Added custom animations for robotics theme */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.6);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Added robotic arm swing animations */
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes swing-reverse {
+  0%,
+  100% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* Added automation factory animations for conveyor belt, robotic arm, and assembly line */
+@keyframes conveyor {
+  0% {
+    left: -16px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes robotic-arm {
+  0%,
+  100% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes assembly-line {
+  0% {
+    left: 8px;
+  }
+  100% {
+    left: calc(100% - 20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.5s ease-out;
+}
+
+/* Added robotic swing animation classes */
+.animate-swing {
+  animation: swing 4s ease-in-out infinite;
+}
+
+.animate-swing-reverse {
+  animation: swing-reverse 3s ease-in-out infinite;
+}
+
+.animate-conveyor {
+  animation: conveyor 6s linear infinite;
+}
+
+.animate-robotic-arm {
+  animation: robotic-arm 4s ease-in-out infinite;
+}
+
+.animate-assembly-line {
+  animation: assembly-line 8s linear infinite;
+}
+
+/* Added self-assembling robot animations */
+@keyframes robot-arm {
+  0%,
+  100% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes robot-arm-reverse {
+  0%,
+  100% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes robot-connect {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scaleX(1.5);
+    opacity: 1;
+  }
+}
+
+@keyframes modular-extend {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.3);
+  }
+}
+
+@keyframes modular-attach {
+  0% {
+    transform: translateY(-10px) scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-5px) scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes assembly-particle {
+  0% {
+    transform: translateY(-20px) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-10px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes component-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-8px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(-4px) rotate(240deg);
+  }
+}
+
+.animate-robot-arm {
+  animation: robot-arm 3s ease-in-out infinite;
+}
+
+.animate-robot-arm-reverse {
+  animation: robot-arm-reverse 3.5s ease-in-out infinite;
+}
+
+.animate-robot-connect {
+  animation: robot-connect 2s ease-in-out infinite;
+}
+
+.animate-modular-extend {
+  animation: modular-extend 2.5s ease-in-out infinite;
+}
+
+.animate-modular-attach {
+  animation: modular-attach 4s ease-in-out infinite;
+}
+
+.animate-assembly-particle {
+  animation: assembly-particle 3s ease-in-out infinite;
+}
+
+.animate-component-float {
+  animation: component-float 6s ease-in-out infinite;
+}
+
+/* Added humanoid robot walking, dancing, and interactive animations */
+/* Humanoid robot walking animations */
+@keyframes humanoid-walk-left {
+  0%,
+  100% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes humanoid-walk-right {
+  0%,
+  100% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes humanoid-leg-left {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes humanoid-leg-right {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes humanoid-foot-left {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes humanoid-foot-right {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+}
+
+/* Humanoid robot dancing animations */
+@keyframes dance-bounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes dance-head {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes dance-arm-left {
+  0%,
+  100% {
+    transform: rotate(-45deg);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes dance-arm-right {
+  0%,
+  100% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  75% {
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes dance-leg-left {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes dance-leg-right {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+/* Interactive humanoid robot animations */
+@keyframes interactive-wave {
+  0%,
+  100% {
+    transform: rotate(-10deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  75% {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes interactive-gesture {
+  0%,
+  100% {
+    transform: rotate(10deg) translateY(0px);
+  }
+  50% {
+    transform: rotate(-15deg) translateY(-4px);
+  }
+}
+
+@keyframes interactive-particle {
+  0% {
+    transform: translateY(0px) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-15px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Added animation classes for humanoid robots */
+.animate-humanoid-walk-left {
+  animation: humanoid-walk-left 2s ease-in-out infinite;
+}
+
+.animate-humanoid-walk-right {
+  animation: humanoid-walk-right 2s ease-in-out infinite;
+}
+
+.animate-humanoid-leg-left {
+  animation: humanoid-leg-left 2s ease-in-out infinite;
+}
+
+.animate-humanoid-leg-right {
+  animation: humanoid-leg-right 2s ease-in-out infinite;
+}
+
+.animate-humanoid-foot-left {
+  animation: humanoid-foot-left 2s ease-in-out infinite;
+}
+
+.animate-humanoid-foot-right {
+  animation: humanoid-foot-right 2s ease-in-out infinite;
+}
+
+.animate-dance-bounce {
+  animation: dance-bounce 1.5s ease-in-out infinite;
+}
+
+.animate-dance-head {
+  animation: dance-head 2s ease-in-out infinite;
+}
+
+.animate-dance-arm-left {
+  animation: dance-arm-left 1.8s ease-in-out infinite;
+}
+
+.animate-dance-arm-right {
+  animation: dance-arm-right 1.8s ease-in-out infinite;
+}
+
+.animate-dance-leg-left {
+  animation: dance-leg-left 1.5s ease-in-out infinite;
+}
+
+.animate-dance-leg-right {
+  animation: dance-leg-right 1.5s ease-in-out infinite;
+}
+
+.animate-interactive-wave {
+  animation: interactive-wave 3s ease-in-out infinite;
+}
+
+.animate-interactive-gesture {
+  animation: interactive-gesture 2.5s ease-in-out infinite;
+}
+
+.animate-interactive-particle {
+  animation: interactive-particle 2s ease-in-out infinite;
+}
+
+/* Added holographic display animations */
+@keyframes hologram-pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes hologram-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes neural-connection {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -12;
+  }
+}
+
+@keyframes neural-node {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Added drone swarm animations */
+@keyframes drone-orbit-1 {
+  0% {
+    transform: rotate(0deg) translateX(120px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(120px) rotate(-360deg);
+  }
+}
+
+@keyframes drone-orbit-2 {
+  0% {
+    transform: rotate(120deg) translateX(100px) rotate(-120deg);
+  }
+  100% {
+    transform: rotate(480deg) translateX(100px) rotate(-480deg);
+  }
+}
+
+@keyframes drone-orbit-3 {
+  0% {
+    transform: rotate(240deg) translateX(80px) rotate(-240deg);
+  }
+  100% {
+    transform: rotate(600deg) translateX(80px) rotate(-600deg);
+  }
+}
+
+@keyframes drone-hover {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes drone-blink {
+  0%,
+  90% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Added animation classes for holographic and drone elements */
+.animate-hologram-pulse {
+  animation: hologram-pulse 3s ease-in-out infinite;
+}
+
+.animate-hologram-flicker {
+  animation: hologram-flicker 4s ease-in-out infinite;
+}
+
+.animate-neural-connection {
+  animation: neural-connection 2s linear infinite;
+}
+
+.animate-neural-node {
+  animation: neural-node 2s ease-in-out infinite;
+}
+
+.animate-drone-orbit-1 {
+  animation: drone-orbit-1 15s linear infinite;
+}
+
+.animate-drone-orbit-2 {
+  animation: drone-orbit-2 18s linear infinite;
+}
+
+.animate-drone-orbit-3 {
+  animation: drone-orbit-3 12s linear infinite;
+}
+
+.animate-drone-hover {
+  animation: drone-hover 2s ease-in-out infinite;
+}
+
+.animate-drone-blink {
+  animation: drone-blink 3s ease-in-out infinite;
+}
+
+/* Added simple robotic arms assembly animations */
+/* Simple robotic arms assembly animations */
+@keyframes gear-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes robotic-arm-1 {
+  0%,
+  100% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes robotic-arm-2 {
+  0%,
+  100% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+}
+
+@keyframes assembly-cube {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+@keyframes sensor-blink {
+  0%,
+  80% {
+    opacity: 1;
+    box-shadow: 0 0 8px currentColor;
+  }
+  90%,
+  100% {
+    opacity: 0.3;
+    box-shadow: 0 0 4px currentColor;
+  }
+}
+
+/* Added animation classes for robotic assembly */
+.animate-gear-rotate {
+  animation: gear-rotate 8s linear infinite;
+}
+
+.animate-robotic-arm-1 {
+  animation: robotic-arm-1 4s ease-in-out infinite;
+}
+
+.animate-robotic-arm-2 {
+  animation: robotic-arm-2 4s ease-in-out infinite;
+}
+
+.animate-assembly-cube {
+  animation: assembly-cube 3s ease-in-out infinite;
+}
+
+.animate-sensor-blink {
+  animation: sensor-blink 2s ease-in-out infinite;
+}
+
+/* Added cybernetics visual animations for neural core and spinning elements */
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 15s linear infinite;
+}
+
+/* Added enhanced interactive robotics animations for comprehensive user interactions */
+@keyframes spin-fast {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes particle-attract {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes circuit-activate {
+  0% {
+    background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+    transform: translateX(-100%);
+  }
+  100% {
+    background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+    transform: translateX(100%);
+  }
+}
+
+@keyframes robotic-joint {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes gear-mesh {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes data-flow {
+  0% {
+    transform: translateX(-100%) scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0%) scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) scaleX(0);
+    opacity: 0;
+  }
+}
+
+/* Added animation classes for enhanced interactive robotics features */
+.animate-spin-fast {
+  animation: spin-fast 1s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 2s linear infinite;
+}
+
+.animate-particle-attract {
+  animation: particle-attract 1.5s ease-in-out infinite;
+}
+
+.animate-circuit-activate {
+  animation: circuit-activate 2s ease-in-out infinite;
+}
+
+.animate-robotic-joint {
+  animation: robotic-joint 3s ease-in-out infinite;
+}
+
+.animate-gear-mesh {
+  animation: gear-mesh 4s linear infinite;
+}
+
+.animate-data-flow {
+  animation: data-flow 3s ease-in-out infinite;
+}

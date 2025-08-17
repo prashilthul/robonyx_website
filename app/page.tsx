@@ -1,56 +1,38 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useEffect } from "react";
+import { LoadingScreen } from "@/components/loading-screen";
+import { Navbar } from "@/components/navbar";
+import { HeroSection } from "@/components/hero-section";
+import { PhotoCarousel } from "@/components/photo-carousel";
+import { AboutSection } from "@/components/about-section";
+import { TeamSection } from "@/components/team-section";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
-	return (
-		<main className="flex flex-col items-center w-full">
-			<HeroSection />
-			<AboutSection />
-			<FeaturesSection />
-			<TeamSection />
-			<EventsSection />
-			<ContactSection />
-			<Footer />
-		</main>
-	);
-}
-"use client";
-import { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import TargetCursor from "@/components/ui/cursor";
-import HeroSection from "../components/HeroSection";
-import MainNavbar from "../components/MainNav";
-import AboutSection from "@/components/AboutSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import ContactSection from "@/components/ContactSection";
-import Bento from "@/components/bento";
-import { TimelineSection } from "@/components/Timelinesection";
-import { ImageScroll } from "@/components/Imagescroll";
-export default function BlockchainClubLanding() {
-	const heroRef = useRef<{ animate: () => gsap.core.Tween }>(null);
-	const navRef = useRef<{ animate: () => gsap.core.Timeline }>(null);
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
-		const master = gsap.timeline();
+		const timer = setTimeout(() => {
+			setIsLoading(false);
+		}, 3000);
 
-		if (heroRef.current && navRef.current) {
-			master.add(heroRef.current.animate());
-			master.add(navRef.current.animate(), "-=0.8");
-		}
+		return () => clearTimeout(timer);
 	}, []);
 
+	if (isLoading) {
+		return <LoadingScreen />;
+	}
+
 	return (
-		<div className="min-h-screen bg-black text-white overflow-hidden">
-			<TargetCursor spinDuration={2} hideDefaultCursor={true} />
-
-			<MainNavbar ref={navRef} className="cursor-target" />
-			<HeroSection ref={heroRef} />
+		<main className="min-h-screen">
+			<Navbar />
+			<HeroSection />
+			<PhotoCarousel />
 			<AboutSection />
-			<FeaturesSection />
-			<Bento />
-			<TimelineSection />
-
-			<ImageScroll />
-			<ContactSection title="Meet Our Team" />
-		</div>
+			<TeamSection />
+			{/* <Footer /> */}
+			{/* currently the footer loko ugly and i dont think we need it anyway */}
+		</main>
 	);
 }
