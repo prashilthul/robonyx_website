@@ -35,8 +35,3 @@ pnpm build && pnpm start
 - Adjust animation timing: edit GSAP timelines in components using refs.
 - Tailwind design tokens: configure in tailwind.config.js (not shown here).
 
-## Deployment
-Any Node-hosting or static export friendly platform (e.g. Vercel). Ensure external Spline + AOS scripts are allowed.
-
-## License
-Internal / club use (add a license if broader distribution is intended).
