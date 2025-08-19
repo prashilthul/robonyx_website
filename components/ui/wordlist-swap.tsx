@@ -258,4 +258,6 @@ const WordListSwap = forwardRef<WordListSwapRef, WordListSwapProps>(
 	}
 );
 
+WordListSwap.displayName = "WordListSwap";
+
 export default WordListSwap;

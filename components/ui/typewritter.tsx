@@ -1,5 +1,11 @@
 "use client";
-import { type ReactNode, useCallback, useEffect, useState } from "react";
+import {
+	type ReactNode,
+	useCallback,
+	useEffect,
+	useMemo,
+	useState,
+} from "react";
 import { motion, type Variants } from "framer-motion";
 
 import { cn } from "@/lib/utils";
@@ -52,8 +58,9 @@ const Typewriter = ({
 	const [isDeleting, setIsDeleting] = useState(false);
 	const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
-	const texts = Array.isArray(text) ? text : [text];
-
+	const texts = useMemo(() => {
+		return Array.isArray(text) ? text : [text];
+	}, [text]);
 	const handleTyping = useCallback(
 		(currentText: string) => {
 			setTimeout(() => {

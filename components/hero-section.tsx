@@ -4,8 +4,7 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Cpu, Zap, Target } from "lucide-react";
-import Typewriter from "./ui/typewritter";
+import { ArrowRight } from "lucide-react";
 import WordListSwap from "./ui/wordlist-swap";
 import { LayoutGroup, motion } from "framer-motion";
 
@@ -81,7 +80,7 @@ export function HeroSection() {
 
 							{/* Supporting Text */}
 							<p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl">
-								Join our robotics club and help shape what's next. From AI to
+								Join our robotics club and help shape what&#39;s next.
 								mechanical design, we turn bold ideas into real-world impact.
 							</p>
 						</div>

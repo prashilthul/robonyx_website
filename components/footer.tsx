@@ -66,8 +66,9 @@ const Footer = () => {
 						</motion.div>
 					</Link>
 					<p className="text-sm max-w-sm mb-6 text-zinc-500">
-						"The future runs on code, and we're writing it."
+						&quot;The future runs on code, and we&apos;re writing it.&quot;
 					</p>
+
 					<div className="flex space-x-4">
 						{socialLinks.map((link, index) => (
 							<motion.a

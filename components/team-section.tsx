@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Code, Wrench, Brain } from "lucide-react";
@@ -104,10 +105,11 @@ export function TeamSection() {
 								<div className="text-center">
 									<div className="relative mb-6 mx-auto w-24 h-24">
 										<div className="w-full h-full rounded-full overflow-hidden border-2 border-emerald-400/30 group-hover:border-emerald-400 transition-colors duration-300">
-											<img
+											<Image
 												src={member.image || "/placeholder.svg"}
 												alt={member.name}
-												className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+												fill
+												className="object-cover transition-transform duration-500 group-hover:scale-110 rounded-full"
 											/>
 										</div>
 										<div className="absolute inset-0 rounded-full bg-emerald-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>

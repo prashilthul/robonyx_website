@@ -1,64 +1,51 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const cardsData = [
 	{
 		id: 1,
 		title: "Project 1",
 		subtitle: "Project ",
-		description: "I have no idea what i am doing right now",
-		image:
-			"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80",
+		description: "I have no idea what I am doing right now",
+		image: "/workshop2.jpg",
 	},
 	{
 		id: 2,
 		title: "Project 2",
 		subtitle: "Project ",
 		description: "Really nice project",
-		image:
-			"https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=600&q=80",
+		image: "/workshop2.jpg",
 	},
 	{
 		id: 3,
 		title: "Project 3",
 		subtitle: "Project ",
 		description: "Really nice project",
-		image:
-			"https://images.unsplash.com/photo-1505692794403-77ca8fdf20e6?auto=format&fit=crop&w=600&q=80",
+		image: "/workshop2.jpg",
 	},
 	{
 		id: 4,
 		title: "Project 4",
 		subtitle: "Project ",
 		description: "Really nice project",
-		image:
-			"https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80",
+		image: "/workshop2.jpg",
 	},
 	{
 		id: 5,
 		title: "Project 5",
 		subtitle: "Project ",
 		description: "Really nice project",
-		image:
-			"https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80",
+		image: "/workshop2.jpg",
 	},
 ];
 
 export default function ProjectsSection() {
 	const [selectedId, setSelectedId] = useState<number | null>(null);
-	const [position, setPosition] = useState<{ top: number; left: number }>({
-		top: 0,
-		left: 0,
-	});
 	const cardRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
 
 	useEffect(() => {
-		if (selectedId !== null && cardRefs.current[selectedId]) {
-			const rect = cardRefs.current[selectedId]!.getBoundingClientRect();
-			setPosition({
-				top: rect.top + window.scrollY,
-				left: rect.left + window.scrollX,
-			});
+		if (selectedId !== null) {
 			document.body.style.overflow = "hidden";
 		} else {
 			document.body.style.overflow = "auto";
@@ -91,11 +78,10 @@ export default function ProjectsSection() {
 				{cardsData.map((card) => (
 					<motion.div
 						key={card.id}
-						// ref={(el) => (cardRefs.current[card.id] = el)}
 						ref={(el) => {
 							cardRefs.current[card.id] = el;
 						}}
-						className={`cursor-pointer rounded-3xl shadow-lg overflow-hidden bg-gradient-to-tr from-gray-800 via-gray-900 to-black text-white flex flex-col w-full h-80`}
+						className="cursor-pointer rounded-3xl shadow-lg overflow-hidden bg-gradient-to-tr from-gray-800 via-gray-900 to-black text-white flex flex-col w-full h-80"
 						onClick={() => setSelectedId(card.id)}
 						layoutId={`card-${card.id}`}
 						whileHover={{ scale: 1.05 }}
@@ -105,11 +91,15 @@ export default function ProjectsSection() {
 							zIndex: selectedId === card.id ? 100 : "auto",
 						}}
 					>
-						<img
-							src={card.image}
-							alt={card.title}
-							className="w-full h-44 object-cover"
-						/>
+						<div className="relative w-full h-44">
+							<Image
+								src={card.image}
+								alt={card.title}
+								fill
+								className="object-cover"
+								sizes="(max-width: 768px) 100vw, 25vw"
+							/>
+						</div>
 						<div className="p-5 flex flex-col flex-grow">
 							<h3 className="text-xl font-semibold">{card.title}</h3>
 							<p className="text-emerald-400 italic">{card.subtitle}</p>
@@ -140,11 +130,15 @@ export default function ProjectsSection() {
 									if (!card) return null;
 									return (
 										<>
-											<img
-												src={card.image}
-												alt={card.title}
-												className="w-full h-64 object-cover"
-											/>
+											<div className="relative w-full h-64">
+												<Image
+													src={card.image}
+													alt={card.title}
+													fill
+													className="object-cover"
+													sizes="(max-width: 768px) 100vw, 50vw"
+												/>
+											</div>
 											<div className="p-8 flex flex-col overflow-auto">
 												<h2 className="text-4xl font-bold mb-3">
 													{card.title}
