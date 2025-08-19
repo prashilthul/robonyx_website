@@ -7,6 +7,8 @@ import { HeroSection } from "@/components/hero-section";
 import { PhotoCarousel } from "@/components/photo-carousel";
 import { AboutSection } from "@/components/about-section";
 import { TeamSection } from "@/components/team-section";
+import Footer from "@/components/footer";
+import ExpandableCardSection from "@/components/project-section";
 
 export default function Home() {
 	const [isLoading, setIsLoading] = useState(true);
@@ -29,9 +31,9 @@ export default function Home() {
 			<HeroSection />
 			<PhotoCarousel />
 			<AboutSection />
+			<ExpandableCardSection />
 			<TeamSection />
-			{/* <Footer /> */}
-			{/* currently the footer loko ugly and i dont think we need it anyway */}
+			<Footer />
 		</main>
 	);
 }

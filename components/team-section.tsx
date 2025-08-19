@@ -35,6 +35,36 @@ const teamMembers = [
 		email: "#",
 		icon: Wrench,
 	},
+	{
+		name: "Ishan Singh2",
+		role: "Club Head",
+		specialization: "Computer Vision and ROS2",
+		image: "/placeholder.svg?height=300&width=300",
+		github: "#",
+		linkedin: "#",
+		email: "#",
+		icon: Brain,
+	},
+	{
+		name: "Jayant Yadav2",
+		role: "Club Vise Head",
+		specialization: "Embedded System",
+		image: "/placeholder.svg?height=300&width=300",
+		github: "#",
+		linkedin: "#",
+		email: "#",
+		icon: Code,
+	},
+	{
+		name: "Prashil Thul2",
+		role: "Web Developer",
+		specialization: "idk bruh",
+		image: "/placeholder.svg?height=300&width=300",
+		github: "#",
+		linkedin: "#",
+		email: "#",
+		icon: Wrench,
+	},
 ];
 
 export function TeamSection() {

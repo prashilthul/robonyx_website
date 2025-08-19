@@ -7,31 +7,31 @@ import Image from "next/image";
 
 const carouselImages = [
 	{
-		src: "/robotics-workshop.png",
-		alt: "Team working on autonomous robot",
-		title: "Autonomous Navigation Project",
-		description: "Building intelligent robots with advanced navigation systems",
+		src: "/workshop2.jpg",
+		alt: "Arduino tutorial",
+		title: "Arduino starter",
+		description: "Building basic understanding of circuits",
 	},
 	{
-		src: "/robot-competition-arena.png",
-		alt: "Robotic arm assembly",
+		src: "/workshop1.jpg",
+		alt: "Arduino tutorial",
 		title: "Competition Arena",
 		description: "Testing our robots in competitive environments",
 	},
 	{
-		src: "/3d-printing-lab-robotics.png",
+		src: "/workshop3.jpg",
 		alt: "3D printing lab",
 		title: "3D Printing & Fabrication",
 		description: "Creating custom parts and prototypes for our robots",
 	},
 	{
-		src: "/coding-robots-session.png",
+		src: "/workshop5.jpg",
 		alt: "Coding session",
-		title: "Programming & AI Development",
-		description: "Developing intelligent algorithms and control systems",
+		title: "Coding session",
+		description: "Hands on practise",
 	},
 	{
-		src: "/placeholder-brpgs.png",
+		src: "/workshop4.jpg",
 		alt: "Robotics workshop",
 		title: "Collaborative Innovation",
 		description: "Working together to push the boundaries of robotics",
@@ -84,9 +84,9 @@ export function PhotoCarousel() {
 					</p>
 				</div>
 
-				<div className="relative max-w-4xl mx-auto">
+				<div className="relative max-w-2xl mx-auto">
 					<div
-						className="relative overflow-hidden rounded-2xl shadow-2xl transition-transform duration-300 hover:scale-[1.02]"
+						className="relative overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-[1.02]"
 						onMouseEnter={() => setIsHovered(true)}
 						onMouseLeave={() => setIsHovered(false)}
 					>

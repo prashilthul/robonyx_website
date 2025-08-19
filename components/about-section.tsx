@@ -112,7 +112,7 @@ export function AboutSection() {
 					</div>
 					<div className="text-center">
 						<div className="text-3xl md:text-4xl font-bold text-accent mb-2">
-							8
+							2
 						</div>
 						<div className="text-muted-foreground">Competition Wins</div>
 					</div>

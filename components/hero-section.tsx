@@ -5,6 +5,9 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Cpu, Zap, Target } from "lucide-react";
+import Typewriter from "./ui/typewritter";
+import WordListSwap from "./ui/wordlist-swap";
+import { LayoutGroup, motion } from "framer-motion";
 
 export function HeroSection() {
 	const [isVisible, setIsVisible] = useState(false);
@@ -24,58 +27,66 @@ export function HeroSection() {
 					muted
 					loop
 					playsInline
-					className="w-full h-full object-cover opacity-50"
+					className="w-full h-full object-cover "
 				>
-					<source src="/smalllvid.mp4" type="video/mp4" />
+					<source src="/simple_background.mp4" type="video/mp4" />
 				</video>
 				<div className="absolute inset-0 bg-black/60" />
 			</div>
 
-			<div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative z-10 flex justify-end">
-				<div className="flex items-center min-h-[80vh] bor">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative z-10 flex">
+				<div className="flex items-center min-h-[80vh] ">
 					<div
 						className={`space-y-6 md:space-y-8 max-w-2xl ${
 							isVisible ? "animate-slide-in-up" : "opacity-0"
 						}`}
 					>
-						<div className="space-y-3 md:space-y-4">
-							<h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight text-right ">
-								Where <span className="text-emerald-400">metal</span>
-								<br />
-								is brought
-								<br />
-								to <span className="text-emerald-400">life</span>.
+						<div className="space-y-6 md:space-y-8 max-w-2xl">
+							<h1 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+								Bringing metal to life
 							</h1>
 
-							<p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed text-right">
-								Join our college robotics club and explore the future of AI and
-								automation. Build intelligent systems, program robotic
-								solutions, and create innovative mechanical assemblies.
+							<LayoutGroup>
+								<motion.p
+									className="flex flex-wrap items-center whitespace-pre text-xl sm:text-2xl md:text-3xl font-medium text-white"
+									layout={true}
+								>
+									<motion.span
+										className="pt-0.5 sm:pt-1 md:pt-2"
+										layout={true}
+										transition={{ type: "spring", damping: 30, stiffness: 400 }}
+									>
+										We build with{" "}
+									</motion.span>
+
+									<WordListSwap
+										texts={[
+											"code.",
+											"automation.",
+											"intelligent machines.",
+											"open-source innovation.",
+										]}
+										mainClassName="text-white px-2 sm:px-2 md:px-3 bg-emerald-500/80 overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+										staggerFrom="last"
+										initial={{ y: "100%" }}
+										animate={{ y: 0 }}
+										exit={{ y: "-120%" }}
+										staggerDuration={0.025}
+										splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+										transition={{ type: "spring", damping: 30, stiffness: 400 }}
+										rotationInterval={2000}
+									/>
+								</motion.p>
+							</LayoutGroup>
+
+							{/* Supporting Text */}
+							<p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl">
+								Join our robotics club and help shape what's next. From AI to
+								mechanical design, we turn bold ideas into real-world impact.
 							</p>
 						</div>
 
-						<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
-							<div className="flex items-center space-x-2 text-emerald-400">
-								<Cpu className="w-5 h-5 sm:w-6 sm:h-6" />
-								<span className="text-white text-sm sm:text-base">
-									Innovation
-								</span>
-							</div>
-							<div className="flex items-center space-x-2 text-emerald-400">
-								<Zap className="w-5 h-5 sm:w-6 sm:h-6" />
-								<span className="text-white text-sm sm:text-base">
-									Efficiency
-								</span>
-							</div>
-							<div className="flex items-center space-x-2 text-emerald-400">
-								<Target className="w-5 h-5 sm:w-6 sm:h-6" />
-								<span className="text-white text-sm sm:text-base">
-									Problem-solving
-								</span>
-							</div>
-						</div>
-
-						<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-end">
+						<div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
 							<Button
 								size="lg"
 								className="bg-emerald-500 hover:bg-emerald-600 text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25 group w-full sm:w-auto"
