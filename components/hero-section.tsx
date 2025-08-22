@@ -80,8 +80,8 @@ export function HeroSection() {
 
 							{/* Supporting Text */}
 							<p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl">
-								Join our robotics club and help shape what&#39;s next.
-								mechanical design, we turn bold ideas into real-world impact.
+								Join our robotics and electronics club and help shape what&#39;s next.
+								We turn bold ideas into real-world impact.
 							</p>
 						</div>
 
