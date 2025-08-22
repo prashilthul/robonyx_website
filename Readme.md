@@ -1,20 +1,22 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+
 ## Getting Started
 
-First, run the development server:
+### Run with Docker (Recommended for development)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Build the Docker image:
+	```powershell
+	docker build -t robonyx-dev .
+	```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Start the development container:
+	```powershell
+	docker run --rm -it -p 3000:3000 robonyx-dev
+	```
+	- This will mount your project folder into the container, so changes you make locally will be reflected immediately.
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
