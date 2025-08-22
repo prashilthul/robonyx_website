@@ -58,7 +58,7 @@ export function Navbar() {
 							href="/"
 							className="text-xl font-bold text-primary-foreground font-mono hover:text-accent transition-colors"
 						>
-							Robonyx
+							Robonyx (comET)
 						</Link>
 					</div>
 

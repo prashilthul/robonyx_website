@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1
+
 
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Dockerfile reference guide at
@@ -18,16 +18,18 @@
 # (e.g., alpine:3.17.2) or SHA (e.g., alpine@sha256:c41ab5c992deb4fe7e5da09f67a8804a46bd0592bfdf0b1847dde0e0889d2bff).
 
 # Development Dockerfile for Next.js
+
+
+
+
 FROM node:20-alpine
 
 WORKDIR /app
 
 COPY package.json package-lock.json* yarn.lock* ./
-
 RUN npm install --legacy-peer-deps
 
 COPY . .
-
 EXPOSE 3000
 
 CMD ["npm", "run", "dev"]
