@@ -8,7 +8,7 @@ const features = [
 		icon: Users,
 		title: "Collaborative Learning",
 		description:
-			"Work alongside passionate students from diverse engineering backgrounds to tackle complex robotics challenges.",
+			"Work alongside passionate students from diverse backgrounds to tackle complex robotics and electronics challenges.",
 	},
 	{
 		icon: Trophy,
@@ -20,7 +20,7 @@ const features = [
 		icon: Lightbulb,
 		title: "Innovation Hub",
 		description:
-			"Access cutting-edge equipment and resources to bring your most ambitious robotics ideas to life.",
+			"Access cutting-edge equipment and resources to bring your most ambitious robotics ideas and electronic projects to life.",
 	},
 	{
 		icon: Rocket,
@@ -62,9 +62,9 @@ export function AboutSection() {
 					</h2>
 					<p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
 						We are a passionate community of students dedicated to pushing the
-						boundaries of robotics and automation. Our mission is to foster
-						innovation, collaboration, and technical excellence in the field of
-						robotics.
+						boundaries of robotics, automation and electronics. Our mission is
+						to foster innovation, collaboration, and technical excellence in the
+						field of robotics and electronics.
 					</p>
 				</div>
 
@@ -100,13 +100,13 @@ export function AboutSection() {
 				>
 					<div className="text-center">
 						<div className="text-3xl md:text-4xl font-bold text-accent mb-2">
-							50+
+							6+
 						</div>
 						<div className="text-muted-foreground">Active Members</div>
 					</div>
 					<div className="text-center">
 						<div className="text-3xl md:text-4xl font-bold text-accent mb-2">
-							15+
+							9+
 						</div>
 						<div className="text-muted-foreground">Projects Completed</div>
 					</div>

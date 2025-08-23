@@ -1,149 +1,89 @@
-"use client";
-
-import React, { useState } from "react";
-import Link from "next/link";
+import { Github, Twitter, Instagram } from "lucide-react";
 import Image from "next/image";
-import { FaGithub, FaXTwitter, FaLinkedin, FaYoutube } from "react-icons/fa6";
-import { motion } from "framer-motion";
 
-const socialLinks = [
-	{ href: "https://github.com/", icon: <FaGithub /> },
-	{ href: "https://twitter.com/", icon: <FaXTwitter /> },
-	{ href: "https://linkedin.com/in/", icon: <FaLinkedin /> },
-	{ href: "https://youtube.com/c/", icon: <FaYoutube /> },
-];
-
-const navLinks = [
-	{ name: "Home", href: "/" },
-	{ name: "About", href: "#about" },
-	{ name: "Team", href: "#team" },
-	{ name: "Contact", href: "#contact" },
-	{ name: "Resources", href: "/resources" },
-];
-
-const Footer = () => {
-	const [isHovered, setIsHovered] = useState(false);
-
+export default function Footer() {
 	return (
-		<motion.footer
-			className="relative overflow-hidden bg-zinc-950 text-zinc-400 py-16 px-4 sm:px-6 lg:px-8 border-t border-zinc-800"
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			transition={{ duration: 0.8, delay: 0.2 }}
-		>
-			<div
-				className={`absolute inset-0 transition-all duration-1000 ease-in-out z-0`}
-				style={{
-					background: isHovered
-						? "linear-gradient(135deg, #1f2937, #111827, #0c4a6e)"
-						: "linear-gradient(45deg, #0c0a09, #18181b, #0c0a09)",
-				}}
-				onMouseEnter={() => setIsHovered(true)}
-				onMouseLeave={() => setIsHovered(false)}
-			/>
+		<footer className="bg-gray-900 border-t border-gray-700">
+			<div className="w-full mx-auto px-6 py-12">
+				<div className="grid grid-cols-1 md:grid-cols-5 items-center gap-8">
+					<div className="flex justify-center md:justify-start">
+						<Image
+							src="/robonyx.svg"
+							alt="Robonyx Logo"
+							width={300}
+							height={300}
+							className="transition-opacity duration-300 "
+						/>
+					</div>
 
-			<div
-				className="absolute inset-0 z-0 bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:16px_16px]"
-				style={{ backgroundPosition: "0% 0%" }}
-			></div>
+					<div className="md:col-span-3 flex flex-col items-center md:flex-row justify-between md:items-start gap-20 text-center md:text-left w-full md:px-48">
+						<div>
+							<h3 className="font-semibold text-white text-2xl mb-4 tracking-wide">
+								Navigation
+							</h3>
+							<div className="flex flex-col space-y-3 text-xl text-gray-300">
+								<a href="/" className="hover:text-white">
+									Home
+								</a>
+								<a href="#about" className="hover:text-white">
+									About
+								</a>
+								<a href="#team" className="hover:text-white">
+									Team
+								</a>
+								<a href="/resources" className="hover:text-white">
+									Resources
+								</a>
+							</div>
+						</div>
 
-			<div className="relative z-10 container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-				<div className="flex flex-col items-center md:items-start text-center md:text-left">
-					<Link href="/" className="mb-4">
-						<motion.div
-							initial={{ scale: 0.9, opacity: 0.8 }}
-							animate={{ scale: 1, opacity: 1 }}
-							whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
-							transition={{ type: "spring", stiffness: 300 }}
-						>
-							<Image
-								src="/logo-primary.svg"
-								alt="Primary Logo"
-								width={120}
-								height={40}
-								className="filter grayscale transition-all duration-300"
-							/>
-						</motion.div>
-					</Link>
-					<p className="text-sm max-w-sm mb-6 text-zinc-500">
-						&quot;The future runs on code, and we&apos;re writing it.&quot;
-					</p>
+						<div>
+							<h3 className="font-semibold text-white text-2xl mb-4 tracking-wide">
+								Connect
+							</h3>
+							<div className="flex flex-col space-y-3 text-xl text-gray-300">
+								<a
+									href="https://github.com"
+									className="flex items-center gap-2 hover:text-white"
+								>
+									<Github className="w-6 h-6" />
+									<span>GitHub</span>
+								</a>
+								<a
+									href="https://twitter.com"
+									className="flex items-center gap-2 hover:text-white"
+								>
+									<Twitter className="w-6 h-6" />
+									<span>Twitter</span>
+								</a>
+								<a
+									href="https://instagram.com"
+									className="flex items-center gap-2 hover:text-white"
+								>
+									<Instagram className="w-6 h-6" />
+									<span>Instagram</span>
+								</a>
+							</div>
+						</div>
+					</div>
 
-					<div className="flex space-x-4">
-						{socialLinks.map((link, index) => (
-							<motion.a
-								key={index}
-								href={link.href}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-zinc-500 hover:text-zinc-100 transition-colors duration-300 relative"
-								whileHover={{ scale: 1.2, y: -5 }}
-								whileTap={{ scale: 0.9 }}
-							>
-								{link.icon}
-							</motion.a>
-						))}
+					<div className="flex justify-center md:justify-end">
+						<Image
+							src="/sac_logo.png"
+							alt="SAC Logo"
+							width={250}
+							height={250}
+							className="transition-opacity duration-300"
+						/>
 					</div>
 				</div>
 
-				<div className="flex flex-col items-center md:items-start text-center md:text-left">
-					<h3 className="text-lg font-semibold text-zinc-200 mb-4">
-						Quick Links
-					</h3>
-					<ul className="space-y-2">
-						{navLinks.map((link, index) => (
-							<motion.li
-								key={index}
-								initial={{ opacity: 0, x: -20 }}
-								animate={{ opacity: 1, x: 0 }}
-								transition={{ duration: 0.5, delay: index * 0.1 }}
-							>
-								<Link
-									href={link.href}
-									className="text-sm hover:text-zinc-100 transition-colors duration-300 relative group"
-								>
-									{link.name}
-									<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-zinc-200 transition-all duration-300 group-hover:w-full" />
-								</Link>
-							</motion.li>
-						))}
-					</ul>
-				</div>
-
-				<div className="flex flex-col items-center md:items-start text-center md:text-left">
-					<h3 className="text-lg font-semibold text-zinc-200 mb-4">
-						Proudly Powered By
-					</h3>
-					<Link
-						href="https://sac.iiitnr.ac.in/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						<motion.div
-							initial={{ scale: 1 }}
-							whileHover={{ scale: 1.05 }}
-							transition={{ type: "spring", stiffness: 300 }}
-						>
-							<Image
-								src="/sac_logo.png"
-								alt="Secondary Logo"
-								width={100}
-								height={100}
-								className="opacity-100 transition-opacity duration-300"
-							/>
-						</motion.div>
-					</Link>
-					<p className="text-sm mt-4 text-zinc-500">
-						Building with the best tools in the business.
+				<div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
+					<p className="text-gray-300 text-sm">
+						© {new Date().getFullYear()} Robonyx. All rights reserved.
 					</p>
 				</div>
 			</div>
-
-			<div className="relative z-10 mt-8 pt-8 border-t border-zinc-800 text-center text-xs text-zinc-500">
-				<p>&copy; {new Date().getFullYear()} Robonyx. All Rights Reserved.</p>
-			</div>
-		</motion.footer>
+		</footer>
 	);
-};
-
-export default Footer;
+}
