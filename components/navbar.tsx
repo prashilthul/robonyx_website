@@ -79,9 +79,11 @@ export function Navbar() {
 					</div>
 
 					<div className="hidden md:block">
-						<Button className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-200 hover:scale-105">
-							Join Us
-						</Button>
+						<a href="components/join_us.tsx" target="_blank">
+							<Button className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-200 hover:scale-105">
+								Join Us
+							</Button>
+						</a>
 					</div>
 
 					<div className="md:hidden">
