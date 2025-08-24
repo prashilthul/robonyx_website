@@ -8,9 +8,9 @@ import { Github, Linkedin, Mail, Code, Wrench, Brain } from "lucide-react";
 const teamMembers = [
 	{
 		name: "Ishan Singh",
-		role: "Club Head",
-		specialization: "Computer Vision and ROS2",
-		image: "/placeholder.svg?height=300&width=300",
+		role: "Head",
+		specialization: "Computer Vision, ROS2 & AI/ML",
+		image: "/default.png?height=300&width=300",
 		github: "#",
 		linkedin: "#",
 		email: "#",
@@ -18,9 +18,9 @@ const teamMembers = [
 	},
 	{
 		name: "Jayant Yadav",
-		role: "Club Vise Head",
-		specialization: "Embedded System",
-		image: "/placeholder.svg?height=300&width=300",
+		role: "Vise Head",
+		specialization: "Embedded System & CPU Architecture",
+		image: "/default.png?height=300&width=300",
 		github: "#",
 		linkedin: "#",
 		email: "#",
@@ -29,38 +29,48 @@ const teamMembers = [
 	{
 		name: "Prashil Thul",
 		role: "Web Developer",
-		specialization: "idk bruh",
-		image: "/placeholder.svg?height=300&width=300",
+		specialization: "Made this Website",
+		image: "/default.png?height=300&width=300",
 		github: "#",
 		linkedin: "#",
 		email: "#",
 		icon: Wrench,
 	},
 	{
-		name: "Ishan Singh2",
-		role: "Club Head",
-		specialization: "Computer Vision and ROS2",
-		image: "/placeholder.svg?height=300&width=300",
+		name: "Bind Vinod",
+		role: "Core Member",
+		specialization: "Sensors & Actuators",
+		image: "/binod.jpg?height=300&width=300",
 		github: "#",
 		linkedin: "#",
 		email: "#",
 		icon: Brain,
 	},
 	{
-		name: "Jayant Yadav2",
-		role: "Club Vise Head",
-		specialization: "Embedded System",
-		image: "/placeholder.svg?height=300&width=300",
+		name: "Rohan Maheswari",
+		role: "Core Member",
+		specialization: "Design & Architecture",
+		image: "/default.png?height=300&width=300",
 		github: "#",
 		linkedin: "#",
 		email: "#",
 		icon: Code,
 	},
 	{
-		name: "Prashil Thul2",
-		role: "Web Developer",
-		specialization: "idk bruh",
-		image: "/placeholder.svg?height=300&width=300",
+		name: "Shreyash Rai",
+		role: "Core Member",
+		specialization: "CAD and Design",
+		image: "/default.png?height=300&width=300",
+		github: "#",
+		linkedin: "#",
+		email: "#",
+		icon: Wrench,
+	},
+	{
+		name: "Shourya Vaid Jain",
+		role: "Core Member",
+		specialization: "IoT",
+		image: "/jain.png?height=300&width=300",
 		github: "#",
 		linkedin: "#",
 		email: "#",
@@ -83,7 +93,7 @@ export function TeamSection() {
 						Meet Our <span className="text-emerald-400">Team</span>
 					</h2>
 					<p className="text-xl text-gray-400 max-w-3xl mx-auto">
-						Passionate engineers and innovators driving the future of robotics
+						Passionate engineers and innovators driving the future of robotics and electronics.
 					</p>
 				</motion.div>
 

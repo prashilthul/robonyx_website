@@ -57,11 +57,11 @@ const Footer = () => {
 							transition={{ type: "spring", stiffness: 300 }}
 						>
 							<Image
-								src="/logo-primary.svg"
-								alt="Primary Logo"
-								width={120}
-								height={40}
-								className="filter grayscale transition-all duration-300"
+								src="/Robonyx-logo-Colour-Centre.svg"
+								alt="Secondary Logo"
+								width={100}
+								height={100}
+								className="opacity-100 transition-opacity duration-300"
 							/>
 						</motion.div>
 					</Link>
