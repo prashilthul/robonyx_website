@@ -91,7 +91,8 @@ export default function ProjectsSection() {
 					Projects
 				</h1>
 				<a
-					href="https://github.com/prashilthul"
+					// href="https://github.com/prashilthul"
+					href="https://github.com/sim-daas" // Preferably use the club/organization GitHub link here
 					target="_blank"
 					rel="noopener noreferrer"
 					className="text-emerald-500 border border-emerald-500 px-5 py-2 rounded-lg hover:bg-emerald-600 hover:text-white transition"

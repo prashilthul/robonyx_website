@@ -30,7 +30,7 @@ const teamMembers = [
 		name: "Prashil Thul",
 		role: "Web Developer",
 		specialization: "Ros2 & Gazebo simulation",
-		image: "/default.png?height=300&width=300",
+		image: "/prash_vector.jpg?height=300&width=300",
 		github: "https://github.com/prashilthul",
 		linkedin: "https://www.linkedin.com/in/prashil-thul-9424a9211/",
 		email: "prashil24101@iiitnr.edu.in",
