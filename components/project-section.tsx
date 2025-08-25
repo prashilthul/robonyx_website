@@ -36,10 +36,26 @@ const cardsData = [
 	},
 	{
 		id: 5,
-		title: "Project 5",
-		subtitle: "Project ",
-		description: "Really nice project",
+		title: "Water pollution monitoring IOT boat",
+		subtitle: "By: Shourya and Shreyash",
+		description: "The IoT-based water pollution monitoring boat is a low-cost, mobile system that floats on water and continuously measures key water quality parameters such as pH, turbidity, temperature, dissolved oxygen, and total dissolved solids using appropriate sensors. An ESP32 microcontroller is used as the central controller because of its built-in WiFi and processing power, which allows it to collect sensor readings and transmit them in real time to cloud platforms like Blynk, ThingSpeak, or Firebase for storage, visualization, and alerts. The boat is powered by rechargeable Li-ion batteries (optionally supported by solar panels) and uses DC motors with propellers, controlled through a motor driver, for navigation. The electronic components are kept in a waterproof casing while sensors are placed in contact with water for accurate readings. Users can monitor live data through a mobile app or web dashboard, receiving alerts when pollution levels exceed safe limits. The system can be further enhanced with GPS for location tracking, AI for pollution prediction, and autonomous navigation, making it useful for rivers, lakes, industrial wastewater monitoring, and environmental research.",
 		image: "/workshop2.jpg",
+	},
+	{
+		id: 6,
+		title: "16 Bit CPU",
+		subtitle: "By: Jayant Yadav",
+		description: "This project creates a 16-bit CPU architecture using Verilog, focusing on basic ALU operations, memory management, and instruction decoding. The guide followed for this project is NAND2TETRIS, the simulations were done is iVerilog and GTKWave",
+		image: "/cpu_placeholder.png",
+		github: "https://github.com/Darkops-cpu/CPU_BUILD",
+	},
+	{
+		id: 7,
+		title: "PCB Designs",
+		subtitle: "By: Jayant Yadav",
+		description: "This project creates PCB designs for various electronic circuits and systems, focusing on best practices for layout, routing, and component placement. The designs are created using EasyEDA and KiCad and are intended for both educational purposes and practical applications.",
+		image: "/pcb_placeholder.jpg",
+		github: "https://github.com/Darkops-cpu/PCB_designs",
 	},
 ];
 

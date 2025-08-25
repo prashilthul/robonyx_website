@@ -41,7 +41,7 @@ export function ContactSection() {
 						Get In Touch
 					</h2>
 					<p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
-						Ready to join our robotics community? Have questions about our
+						Ready to join our robotics and electronics community? Have questions about our
 						projects? We&apos;d love to hear from you!
 					</p>
 				</div>
