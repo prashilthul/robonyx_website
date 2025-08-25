@@ -62,9 +62,9 @@ export function AboutSection() {
 					</h2>
 					<p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
 						We are a passionate community of students dedicated to pushing the
-						boundaries of robotics, automation and electronics. Our mission is
-						to foster innovation, collaboration, and technical excellence in the
-						field of robotics and electronics.
+						boundaries of robotics, automation and electronics. Our mission is to foster
+						innovation, collaboration, and technical excellence in the field of
+						robotics and electronics.
 					</p>
 				</div>
 

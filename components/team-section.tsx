@@ -7,63 +7,76 @@ import { Github, Linkedin, Mail, Code, Wrench, Brain } from "lucide-react";
 
 const teamMembers = [
 	{
-		name: "Ishan Singh",
-		role: "Club Head",
-		specialization: "Computer Vision and ROS2",
-		image: "/placeholder.svg?height=300&width=300",
-		github: "#",
-		linkedin: "#",
-		email: "#",
+		name: "Ishaan Singh",
+		role: "Head",
+		specialization: "Edge computing & computer vision",
+		image: "/ishaan_mog.jpg?height=300&width=300",
+		github: "https://www.github.com/sim-daas",
+		linkedin: "https://www.linkedin.com/in/i-a7b715324/",
+		email: "ishaan24101@iiitnr.edu.in",
 		icon: Brain,
 	},
 	{
 		name: "Jayant Yadav",
-		role: "Club Vise Head",
-		specialization: "Embedded System and Verilog",
-		image: "/placeholder.svg?height=300&width=300",
-		github: "#",
-		linkedin: "#",
-		email: "#",
+		role: "Vise Head",
+		specialization: "Embedded System & CPU Architecture",
+		image: "/jayant_pfp.png?height=300&width=300",
+		github: "https://github.com/Darkops-cpu",
+		linkedin: "https://www.linkedin.com/in/jayant-yadav-47701a312/",
+		email: "jayant24101@iiitnr.edu.in",
 		icon: Code,
 	},
 	{
-		name: "Shourya",
-		role: "Core",
-		specialization: "Embedded systems",
-		image: "/shourya.png",
-		github: "#",
-		linkedin: "#",
-		email: "#",
+		name: "Prashil Thul",
+		role: "Web Developer",
+		specialization: "Ros2 & Gazebo simulation",
+		image: "/default.png?height=300&width=300",
+		github: "https://github.com/prashilthul",
+		linkedin: "https://www.linkedin.com/in/prashil-thul-9424a9211/",
+		email: "prashil24101@iiitnr.edu.in",
 		icon: Wrench,
 	},
 	{
-		name: "Vinod Bind",
-		role: "Core",
-		specialization: "FGPA",
-		image: "/vinod_bind.jpg",
+		name: "Bind Vinod",
+		role: "Core Member",
+		specialization: "Sensors & Actuators",
+		image: "/binod.jpg?height=300&width=300",
 		github: "#",
-		linkedin: "#",
-		email: "#",
+		linkedin:
+			"https://www.linkedin.com/in/vinod-bind-8a7a6b32b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		email: "bind24101@iiitnr.edu.in",
 		icon: Brain,
 	},
 	{
-		name: "Shreya Rai",
-		role: "Core",
-		specialization: "Embedded System",
-		image: "/Shreya_rai.jpg",
+		name: "Rohan Maheswari",
+		role: "Core Member",
+		specialization: "Design & Prototyping",
+		image: "/default.png?height=300&width=300",
 		github: "#",
-		linkedin: "#",
-		email: "#",
+		linkedin:
+			"https://www.linkedin.com/in/rohan-maheshwari-65b03632a?trk=contact-info",
+		email: "rohan24101@iiitnr.edu.in",
 		icon: Code,
 	},
 	{
-		name: "Prashil Thul2",
-		role: "Web Developer",
-		specialization: "idk bruh",
-		image: "/placeholder.svg?height=300&width=300",
+		name: "Shreyash Rai",
+		role: "Core Member",
+		specialization: "CAD and Design",
+		image: "/Shreya_rai.jpg?height=300&width=300",
+		github: "https://www.github.com/ItsMat78",
+		linkedin: "https://www.linkedin.com/in/shreyash-rai-3aa123251/",
+		email: "shreyash24101@iiitnr.edu.in",
+		icon: Wrench,
+	},
+	{
+		name: "Shourya Vaid Jain",
+		role: "Core Member",
+		specialization: "IoT",
+		image: "/default.png?height=300&width=300",
 		github: "#",
-		linkedin: "#",
-		email: "#",
+		linkedin:
+			"https://www.linkedin.com/in/shourya-vaidhya-jain-80a576329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+		email: "shourya24101@iiitnr.edu.in",
 		icon: Wrench,
 	},
 ];
@@ -84,6 +97,7 @@ export function TeamSection() {
 					</h2>
 					<p className="text-xl text-gray-400 max-w-3xl mx-auto">
 						Passionate engineers and innovators driving the future of robotics
+						and electronics.
 					</p>
 				</motion.div>
 
@@ -141,7 +155,8 @@ export function TeamSection() {
 											<Linkedin className="w-4 h-4 text-gray-400 hover:text-emerald-400 transition-colors" />
 										</a>
 										<a
-											href={member.email}
+											// href={member.email}
+											href={`mailto:${member.email}`}
 											className="p-3 bg-gray-800/50 hover:bg-emerald-400/20 rounded-lg transition-all duration-300 hover:scale-110 border border-gray-700 hover:border-emerald-400/50"
 										>
 											<Mail className="w-4 h-4 text-gray-400 hover:text-emerald-400 transition-colors" />

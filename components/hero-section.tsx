@@ -42,7 +42,7 @@ export function HeroSection() {
 					>
 						<div className="space-y-6 md:space-y-8 max-w-2xl">
 							<h1 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
-								Bringing metal to life
+								Bringing metal & silicon to life
 							</h1>
 
 							<LayoutGroup>
@@ -80,7 +80,7 @@ export function HeroSection() {
 
 							{/* Supporting Text */}
 							<p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl">
-								Join our robotics and electronics club and help shape what&#39;s
+								Join our robotics and electronics club and help shape what's
 								next. We turn bold ideas into real-world impact.
 							</p>
 						</div>

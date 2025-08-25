@@ -58,7 +58,7 @@ export function Navbar() {
 							href="/"
 							className="text-xl font-bold text-primary-foreground font-mono hover:text-accent transition-colors"
 						>
-							Robonyx
+							Robonyx (comET)
 						</Link>
 					</div>
 
@@ -79,9 +79,11 @@ export function Navbar() {
 					</div>
 
 					<div className="hidden md:block">
-						<Button className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-200 hover:scale-105">
-							Join Us
-						</Button>
+						<a href="/join_us">
+							<Button className="bg-accent hover:bg-accent/90 text-accent-foreground transition-all duration-200 hover:scale-105">
+								Join Us
+							</Button>
+						</a>
 					</div>
 
 					<div className="md:hidden">
