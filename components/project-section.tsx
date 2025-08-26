@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Github, Linkedin, Mail, Code, Wrench, Brain } from "lucide-react";
+import { Github } from "lucide-react";
 
 const cardsData = [
 	{
